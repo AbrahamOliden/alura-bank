@@ -1,4 +1,4 @@
-const errorTypes = [
+export const errorTypes = [
     'valueMissing',
     'typeMismatch',
     'patternMismatch',
@@ -6,14 +6,14 @@ const errorTypes = [
     'customError'
 ];
 
-const mensajes = {
+export const messages = {
     nombre: {
       valueMissing: "El campo nombre no puede estar vacío.",
       patternMismatch: "Por favor, ingrese un nombre válido.",
       tooShort: "Por favor, ingrese un nombre válido.",
     },
     email: {
-      valueMissing: "El campo email no puede estar vacío.",
+      valueMissing: "El campo e-mail no puede estar vacío.",
       typeMismatch: "Por favor, ingrese un e-mail válido.",
       tooShort: "Por favor, ingrese un e-mail válido.",
     },
