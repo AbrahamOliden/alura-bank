@@ -4,7 +4,8 @@ import isLegalAge from "./validate-age.js";
 const formInput = document.querySelectorAll('[required]');
 
 formInput.forEach( (input) => {
-    input.addEventListener( 'blur', () => { verifyInput(input) } );
+    input.addEventListener( 'blur', () => verifyInput(input) );
+    input.addEventListener( 'invalid', (event) => event.preventDefault() );
 } );
 
 function verifyInput(input) {
@@ -16,5 +17,4 @@ function verifyInput(input) {
         validateAge(input);
     };
 
-    console.log(input.validity);
 };

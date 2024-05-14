@@ -2,7 +2,6 @@ export default function isLegalAge( input ) {
     const birthdate = new Date( input.value );
     validateAge(birthdate);
 
-    console.log(validateAge(birthdate));
 };
 
 function validateAge( date ) {
