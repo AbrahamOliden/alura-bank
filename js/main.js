@@ -15,4 +15,6 @@ function verifyInput(input) {
     if ( input.name === 'fecha_nacimiento' && input.value !== '' ) {
         validateAge(input);
     };
+
+    console.log(input.validity);
 };
