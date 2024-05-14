@@ -1,6 +1,8 @@
 export default function isLegalAge( input ) {
     const birthdate = new Date( input.value );
-    validateAge(birthdate);
+    if ( !validateAge(birthdate) ) {
+        input.setCustomValidity('Debes ser mayor de edad');
+    };
 
 };
 
