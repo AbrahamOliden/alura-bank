@@ -3,6 +3,22 @@ import isLegalAge from "./validate-age.js";
 import { errorTypes, messages } from "./custom-errors.js";
 
 const formInput = document.querySelectorAll('[required]');
+const form = document.querySelector('[data-formulario]');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const listOfAnswers = {
+        nombre: event.target.elements['nombre'].value,
+        email: event.target.elements['email'].value,
+        identificacion: event.target.elements['identificacion'].value,
+        cuil: event.target.elements['cuil'].value,
+        fecha_nacimiento: event.target.elements['fecha_nacimiento'].value
+    };
+
+    localStorage.setItem('registro', JSON.stringify( listOfAnswers) );
+    window.location = './abrir-cuenta-form-2.html';
+} );
 
 formInput.forEach( (input) => {
     input.addEventListener( 'blur', () => verifyInput(input) );
