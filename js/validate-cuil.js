@@ -2,12 +2,12 @@ export default function isCuil (input) {
     const cuil = input.value.replace(/[-\/]/g, '');
 
     if ( hasRepeatedNumbers(cuil) ) {
-        console.log('Repeated values');
+        input.setCustomValidity('Repeated values');
     } else {
         if ( validateFirstDigits(cuil) && validateVerifier(cuil) ) {
             console.log('Valid CUIL');
         } else {
-            console.log('CUIL does not exist');
+            input.setCustomValidity('CUIL does not exist');
         };
     };
 };
