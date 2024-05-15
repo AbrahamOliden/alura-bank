@@ -4,6 +4,7 @@ const cameraInput = document.querySelector('[data-camera]');
 const takePhotoButton = document.querySelector('[data-tomar-foto]');
 const message = document.querySelector('[data-mensaje]');
 const canvas = document.querySelector('[data-video-canvas]');
+const submitButton = document.querySelector('[data-enviar]');
 let imgUrl = '';
 
 openCameraButton.addEventListener('click', async () => {
@@ -19,4 +20,13 @@ takePhotoButton.addEventListener('click', () => {
     imgUrl = canvas.toDataURL('image/jpeg');
     cameraInput.style.display = 'none';
     message.style.display = 'block';
+});
+
+submitButton.addEventListener('click', () => {
+    const receiveData = localStorage.getItem('registro');
+    const parseData = JSON.parse(receiveData);
+    parseData.img_url = imgUrl;
+
+    localStorage.setItem('registro', JSON.stringify(parseData));
+    window.location.href = './abrir-cuenta-form-3.html';
 });
